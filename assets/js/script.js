@@ -175,6 +175,7 @@ if (form) {
     submitBtn.disabled = true;
     btnIcon.style.display = 'none';
     submitBtn.setAttribute('aria-busy', 'true');
+    submitBtn.classList.add('loading');
     if (statusEl) {
       statusEl.textContent = 'Sending your message...';
     }
@@ -205,6 +206,7 @@ if (form) {
           submitBtn.disabled = false;
           submitBtn.style.background = '';
           submitBtn.removeAttribute('aria-busy');
+          submitBtn.classList.remove('loading');
         }, 3000);
       } else {
         throw new Error('Form submission failed');
@@ -224,6 +226,7 @@ if (form) {
         submitBtn.disabled = false;
         submitBtn.style.background = '';
         submitBtn.removeAttribute('aria-busy');
+        submitBtn.classList.remove('loading');
       }, 3000);
     }
   });

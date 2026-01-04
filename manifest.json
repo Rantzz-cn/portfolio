@@ -1,0 +1,15 @@
+{
+  "name": "Ranier Teraldico Portfolio",
+  "short_name": "Ranier.dev",
+  "start_url": "/portfolio/",
+  "display": "standalone",
+  "background_color": "#0d0d12",
+  "theme_color": "#0d0d12",
+  "icons": [
+    {
+      "src": "assets/images/preview.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
