@@ -464,10 +464,22 @@ a {
 .logo {
   font-weight: 700;
   font-size: 1.2rem;
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
 }
 
 .logo-accent {
   color: var(--accent);
+  display: inline-block;
+  animation: jump 0.6s ease-in-out infinite;
+}
+
+@keyframes jump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
 
