@@ -157,6 +157,18 @@ if (form) {
     const btnText = submitBtn.querySelector('.btn-text');
     const btnIcon = submitBtn.querySelector('.btn-icon');
     const statusEl = form.querySelector('.form-status');
+    const toastEl = form.querySelector('.form-toast');
+
+    const showToast = (type, message) => {
+      if (!toastEl) return;
+      toastEl.textContent = message;
+      toastEl.classList.remove('success', 'error');
+      toastEl.classList.add(type);
+      toastEl.style.display = 'flex';
+      setTimeout(() => {
+        toastEl.style.display = 'none';
+      }, 3200);
+    };
     
 
     btnText.textContent = 'Sending...';
@@ -184,6 +196,7 @@ if (form) {
         if (statusEl) {
           statusEl.textContent = 'Thanks for reaching out! I will reply within 24-48 hours.';
         }
+        showToast('success', 'Message sent! I will reply within 24-48 hours.');
         
 
         setTimeout(() => {
@@ -203,6 +216,7 @@ if (form) {
       if (statusEl) {
         statusEl.textContent = 'Something went wrong. Please try again or email me directly at teraldicoranier@gmail.com.';
       }
+      showToast('error', 'Something went wrong. Please try again.');
       
       setTimeout(() => {
         btnText.textContent = 'Send Message';
